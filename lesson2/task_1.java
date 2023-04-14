@@ -9,7 +9,7 @@ public class task_1 {
     }
 
 static void f_write(String item){
-    try(FileWriter writer= new FileWriter("longir.txt",true))
+    try(FileWriter writer= new FileWriter("lesson2/longir.txt",true))
     {
         writer.write(item);
         writer.close();  
