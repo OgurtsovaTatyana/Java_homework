@@ -25,11 +25,10 @@ static void f_read(){
 
 static void f_print(String line){
     String [] words=line.split(",");
-    String[] print_word =new String [3];
+    String[] print_words=new String[]{" получил "," по предмету ",""};  
     int i=0;
     StringBuilder result = new StringBuilder();
-    for(String word : words){
-        String[] print_words=new String[]{" получил "," по предмету ",""};        
+    for(String word : words){             
         String[] word_item=word.split(":");
         StringBuilder builder = new StringBuilder(word_item[1]);
         builder.deleteCharAt(0);
