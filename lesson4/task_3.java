@@ -1,7 +1,6 @@
 package lesson4;
 
 import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 // В калькулятор добавьте возможность отменить последнюю операцию.

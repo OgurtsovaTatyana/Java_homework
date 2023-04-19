@@ -7,7 +7,7 @@ import java.util.Random;
 public class task_1 {
     public static void main(String[] args) {
         Random rand = new Random();
-        LinkedList <Integer> my_list= new LinkedList();
+        LinkedList <Integer> my_list= new LinkedList<Integer>();
         for (int index = 0; index < 10; index++) {
         my_list.add(rand.nextInt(10));} 
         System.out.println(my_list);

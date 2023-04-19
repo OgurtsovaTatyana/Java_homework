@@ -1,7 +1,7 @@
 package lesson4;
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
+//import java.util.List;
 import java.util.Scanner;
 // 2) Реализуйте очередь с помощью LinkedList со следующими методами:
 // enqueue() - помещает элемент в конец очереди,
@@ -47,14 +47,14 @@ public class task_2 {
         }
         sc.close(); 
     }
-    static void enqueue(LinkedList list, int index){
+    static void enqueue(LinkedList <String>list, int index){
         list.addLast(list.get(index));  
         list.remove(list.get(index));  
     }
-    static void dequeue(LinkedList list){
+    static void dequeue(LinkedList <String>list){
         System.out.println(list.pop()); 
     }   
-    static void first(LinkedList list){
+    static void first(LinkedList <String>list){
         System.out.println(list.getFirst());
     }   
 }

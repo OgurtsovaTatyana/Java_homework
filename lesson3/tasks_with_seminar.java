@@ -1,12 +1,12 @@
 package lesson3;
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Random;
+//import java.sql.Array;
+//import java.util.ArrayList;
+//import java.util.Arrays;
+//import java.util.Collection;
+//import java.util.Comparator;
+//import java.util.HashSet;
+//import java.util.Iterator;
+//import java.util.Random;
 
 public class tasks_with_seminar{
      public static void main(String[] args) {
@@ -39,15 +39,15 @@ public class tasks_with_seminar{
 //     }   
 
 // Задача про строки и числа
-ArrayList my_list =new ArrayList<>( Arrays.asList("sd",2,3,"gf","tr",6,8,"hg","er"));
-Iterator <Object> item = my_list.iterator();
-        while(item.hasNext()){
-         if ( item.next() instanceof Integer) {
-            item.remove();
-            }
+// ArrayList my_list =new ArrayList<>( Arrays.asList("sd",2,3,"gf","tr",6,8,"hg","er"));
+// Iterator <Object> item = my_list.iterator();
+//         while(item.hasNext()){
+//          if ( item.next() instanceof Integer) {
+//             item.remove();
+//             }
            
-        } 
- System.out.println(my_list);
+//         } 
+//  System.out.println(my_list);
 }
 }
 

@@ -1,8 +1,8 @@
 package lesson4;
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Random;
+//import java.util.LinkedList;
+//import java.util.Random;
 import java.util.Scanner;
 //консольное приложение 1
 public class task_with_seminar {
@@ -34,7 +34,7 @@ public class task_with_seminar {
     System.out.println("Введите стороку или stop - выход ");
     Scanner sc=new Scanner(System.in);
     String text="";
-    int i;
+    //int i;
     while (true) {
         text=sc.nextLine().strip();
         if(text.equals("print")){
@@ -52,5 +52,6 @@ public class task_with_seminar {
         
     };
 System.out.println(dq);
+sc.close();
     }
 }
