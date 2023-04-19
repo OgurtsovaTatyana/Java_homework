@@ -17,6 +17,18 @@ public class NoteBook{
     public Integer getRam() {
         return ram;
     }    
+    public Integer getHdd() {
+        return hdd;
+    }
+    public String getModel() {
+        return model;
+    }
+    public String getOS() {
+        return os;
+    }
+    public String getColour() {
+        return color;
+    }
     public void displayInfo(){
             System.out.printf("Model: %s\t RAM: %dгб\t HDD: %dгб\t OS: %s\t Color: %s \n", model, ram,hdd,os,color);
         } 

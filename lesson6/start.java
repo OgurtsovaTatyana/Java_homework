@@ -31,18 +31,12 @@ public class start {
         list_nb.add(notebook5);
         list_nb.add(notebook6);
         
-        print_list_nb(list_nb); // печать всего списка ноутбуков
+        //print_list_nb(list_nb); // печать всего списка ноутбуков
         print_menu();
         search_menu(list_nb);
 
     }// end public static void main
 
-
-// Например: “Введите цифру, соответствующую необходимому критерию:
-// 1 - ОЗУ
-// 2 - Объем ЖД
-// 3 - Операционная система
-// 4 - Цвет
 static void print_menu(){
     System.out.println("Введите цифру, соответствующую необходимому критерию:\n"
     + " 1 - ОЗУ\n"
@@ -57,38 +51,73 @@ for (NoteBook item_nb : my_list) {
 }
 }
 //функции фильтры:
+//озу
 static void search_Ram(Integer item_ram, ArrayList<NoteBook> my_list){
     for (NoteBook item_nb : my_list) {
         if (item_nb.getRam() >item_ram) item_nb.displayInfo();   
     }
 }
-static void search_menu(ArrayList<NoteBook> my_list){  // меню
+//hdd
+static void search_Hdd(Integer item_hdd, ArrayList<NoteBook> my_list){
+    for (NoteBook item_nb : my_list) {
+        if (item_nb.getHdd() >item_hdd) item_nb.displayInfo();   
+    }
+}
+// операционная система
+static void search_OS(String item_os, ArrayList<NoteBook> my_list){
+    for (NoteBook item_nb : my_list) {
+        if ( item_os.equalsIgnoreCase(item_nb.getOS()) ) {
+            item_nb.displayInfo();}   
+            else {
+                System.out.println("Такого товара нет");
+            }
+        }
+    }
+// цвет
+
+static void search_Color(String item_os, ArrayList<NoteBook> my_list){
+    for (NoteBook item_nb : my_list) {
+        if ( item_os.equalsIgnoreCase(item_nb.getColour()) ) {
+            item_nb.displayInfo();}   
+            else {
+                System.out.println("Такого товара нет");
+            }
+        }
+    }
+public static void search_menu(ArrayList<NoteBook> my_list){  // меню
     Scanner sc= new Scanner(System.in);
     Character choice= sc.next().charAt(0);
-    Character criterion;
+    String str_criterion;
+    Integer int_criterion;
     switch (choice) {
         case '1':
         System.out.println("Введите минимальное значение для объема памяти ОЗУ");
-        Integer int_criterion=sc.nextInt();
+        int_criterion=sc.nextInt();
         System.out.println("Товары в наличии по вашему запросу:");
         search_Ram(int_criterion,my_list);
+        break; 
 
-            break;
         case '2':
         System.out.println("Введите минимальное значение для объема памяти жесткого диска");
-        criterion=sc.next().charAt(0);
+        int_criterion=sc.nextInt();
         System.out.println("Ваш выбор:");
+        search_Hdd(int_criterion,my_list);
         break;
+
         case '3':
         System.out.println("Выберите тип операционной системы");
-        criterion=sc.next().charAt(0);
+        str_criterion=sc.nextLine().strip();
         System.out.println("Ваш выбор:");
-            break;
-         case '4':
-        System.out.println("Выберите цвет");
-        criterion=sc.next().charAt(0);
-        System.out.println("Ваш выбор:");
+        search_OS(str_criterion,my_list);
         break;
+
+        case '4':
+        System.out.println("Выберите цвет");
+        str_criterion=sc.nextLine().strip();
+        System.out.println("Ваш выбор:");
+        search_Color(str_criterion,my_list);
+        break;
+
         default:
         System.out.println("Неверно введен номер");
             break;
