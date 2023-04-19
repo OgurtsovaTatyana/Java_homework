@@ -32,8 +32,8 @@ public class start {
         list_nb.add(notebook6);
         
         print_list_nb(list_nb); // печать всего списка ноутбуков
-       print_menu();
-       search_menu();
+        print_menu();
+        search_menu(list_nb);
 
     }// end public static void main
 
@@ -50,21 +50,29 @@ static void print_menu(){
     + " 3 - Операционная система\n"
     + " 4 - Цвет\n");
 }
+// вывод ноутбука (исп функцию класса в NoteBook)
 static void print_list_nb( ArrayList<NoteBook> my_list) {
 for (NoteBook item_nb : my_list) {
-    item_nb.displayInfo(); // вывод ноутбука (исп функцию класса в NoteBook)
-    
+    item_nb.displayInfo();   
 }
 }
-static void search_menu(){  // меню
+//функции фильтры:
+static void search_Ram(Integer item_ram, ArrayList<NoteBook> my_list){
+    for (NoteBook item_nb : my_list) {
+        if (item_nb.getRam() >item_ram) item_nb.displayInfo();   
+    }
+}
+static void search_menu(ArrayList<NoteBook> my_list){  // меню
     Scanner sc= new Scanner(System.in);
     Character choice= sc.next().charAt(0);
     Character criterion;
     switch (choice) {
         case '1':
         System.out.println("Введите минимальное значение для объема памяти ОЗУ");
-        criterion=sc.next().charAt(0);
-        System.out.println("Ваш выбор:");
+        Integer int_criterion=sc.nextInt();
+        System.out.println("Товары в наличии по вашему запросу:");
+        search_Ram(int_criterion,my_list);
+
             break;
         case '2':
         System.out.println("Введите минимальное значение для объема памяти жесткого диска");

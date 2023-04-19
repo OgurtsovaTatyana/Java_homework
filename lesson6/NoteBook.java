@@ -14,7 +14,9 @@ public class NoteBook{
         this.os=os;
         this.color=color;
         }
-        
+    public Integer getRam() {
+        return ram;
+    }    
     public void displayInfo(){
             System.out.printf("Model: %s\t RAM: %dгб\t HDD: %dгб\t OS: %s\t Color: %s \n", model, ram,hdd,os,color);
         } 
