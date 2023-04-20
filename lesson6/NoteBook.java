@@ -26,7 +26,7 @@ public class NoteBook{
     public String getOS() {
         return os;
     }
-    public String getColour() {
+    public String getColor() {
         return color;
     }
     public void displayInfo(){

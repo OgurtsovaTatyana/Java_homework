@@ -1,19 +1,7 @@
 package lesson6;
 // Урок 6. Хранение и обработка данных ч3: множество коллекций Set
-// 
-// Далее нужно запросить минимальные значения для указанных критериев - сохранить параметры фильтрации можно также в Map.
-
 import java.util.ArrayList;
 import java.util.Scanner;
-
-// Отфильтровать ноутбуки их первоначального множества и вывести проходящие по условиям.
-
-// Класс сделать в отдельном файле
-
-// приветствие
-// Выбор параметра
-// выбор конкретнее
-// вывод подходящих
 public class start {
     public static void main(String[] args) {
         NoteBook notebook1 = new NoteBook("Asus",8,512, "Windows11","red");
@@ -65,29 +53,35 @@ static void search_Hdd(Integer item_hdd, ArrayList<NoteBook> my_list){
 }
 // операционная система
 static void search_OS(String item_os, ArrayList<NoteBook> my_list){
-    for (NoteBook item_nb : my_list) {
+   Boolean res=false; 
+        for (NoteBook item_nb : my_list) {
         if ( item_os.equalsIgnoreCase(item_nb.getOS()) ) {
             item_nb.displayInfo();}   
             else {
-                System.out.println("Такого товара нет");
+                res=true;
+                
             }
         }
+        if (res) System.out.println("Такого товара нет");
     }
 // цвет
+static void search_Color(String item_col, ArrayList<NoteBook> my_list){
+    Boolean res=false; 
+         for (NoteBook item_nb : my_list) {
+         if ( item_col.equalsIgnoreCase(item_nb.getColor()) ) {
+             item_nb.displayInfo();}   
+             else {
+                 res=true;
+                 
+             }
+         }
+         if (res) System.out.println("Такого товара нет");
+     }
 
-static void search_Color(String item_os, ArrayList<NoteBook> my_list){
-    for (NoteBook item_nb : my_list) {
-        if ( item_os.equalsIgnoreCase(item_nb.getColour()) ) {
-            item_nb.displayInfo();}   
-            else {
-                System.out.println("Такого товара нет");
-            }
-        }
-    }
 public static void search_menu(ArrayList<NoteBook> my_list){  // меню
     Scanner sc= new Scanner(System.in);
     Character choice= sc.next().charAt(0);
-    String str_criterion;
+    String str_criterion=sc.nextLine();
     Integer int_criterion;
     switch (choice) {
         case '1':
@@ -103,18 +97,19 @@ public static void search_menu(ArrayList<NoteBook> my_list){  // меню
         System.out.println("Ваш выбор:");
         search_Hdd(int_criterion,my_list);
         break;
-
         case '3':
         System.out.println("Выберите тип операционной системы");
-        str_criterion=sc.nextLine().strip();
-        System.out.println("Ваш выбор:");
+        str_criterion=sc.nextLine();
+        str_criterion.strip();
+        System.out.println("Ваш выбор:"+ str_criterion);
         search_OS(str_criterion,my_list);
         break;
 
         case '4':
         System.out.println("Выберите цвет");
-        str_criterion=sc.nextLine().strip();
-        System.out.println("Ваш выбор:");
+        str_criterion=sc.nextLine();
+        str_criterion.strip();
+        System.out.println("Ваш выбор:"+ str_criterion);
         search_Color(str_criterion,my_list);
         break;
 
